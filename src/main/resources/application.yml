@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: demotapp1
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydb
+    username: admin
+    password: admin
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8181
+  tomcat:
+    threads:
+      max: 200
