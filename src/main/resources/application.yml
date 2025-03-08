@@ -5,10 +5,13 @@ spring:
     url: jdbc:postgresql://localhost:5432/mydb
     username: admin
     password: admin
+    driver-class-name: org.postgresql.Driver
+
 
   jpa:
     hibernate:
       ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 server:
   port: 8181
