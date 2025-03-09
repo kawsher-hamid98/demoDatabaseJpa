@@ -18,21 +18,30 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    public void saveUser(@RequestBody User user) {
+    public User saveUser(@RequestBody User user) {
         try {
             userService.save(user);
             log.info("User saved successfully");
+
+            return user;
         } catch (Exception e) {
             log.error(e.getMessage());
         }
+
+        return null;
     }
 
     @GetMapping("/find")
-    public void findSingleUser(String email) {
+    public User findSingleUser(@RequestParam String email, @RequestParam(name = "userName") String uName) {
+        log.info("email: {}", email);
+        log.info("uName: {}", uName);
+
         try {
-            userService.findSingleUser(email);
+            return userService.findSingleUser(email);
         } catch (Exception e) {
             log.error(e.getMessage());
         }
+
+        return null;
     }
 }

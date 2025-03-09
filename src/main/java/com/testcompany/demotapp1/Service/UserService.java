@@ -16,12 +16,12 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void save(User user) {
+    public User save(User user) {
         if (user.name == null || user.email == null || user.password == null) {
             throw new IllegalArgumentException("Username or email or password is null");
         }
 
-        userRepository.save(user);
+        return userRepository.save(user);
     }
 
     public User findSingleUser(String email) {

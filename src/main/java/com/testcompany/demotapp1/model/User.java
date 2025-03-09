@@ -11,6 +11,7 @@ public class User {
     public String name;
     @Column(unique = true)
     public String email;
+    @Column(name = "uName")
     public String userName;
     public String password;
 
