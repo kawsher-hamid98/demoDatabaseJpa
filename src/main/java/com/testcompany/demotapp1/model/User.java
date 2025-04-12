@@ -36,11 +36,3 @@ public class User {
                 '}';
     }
 }
-
-
-//Super key null, name_email, id_name_email, id, email
-//candidate key
-//Primary Key
-//Composite key
-//Alternate key
-//surrogate key
