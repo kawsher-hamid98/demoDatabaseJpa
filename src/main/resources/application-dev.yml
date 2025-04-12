@@ -3,3 +3,7 @@ server:
   tomcat:
     threads:
       max: 200
+
+logging:
+  level:
+    root: info
