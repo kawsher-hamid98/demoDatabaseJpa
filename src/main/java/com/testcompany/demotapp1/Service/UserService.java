@@ -20,14 +20,6 @@ public class UserService {
     }
 
     public User save(User user) {
-        if (user.name == null || user.password == null) {
-            throw new UserValidationException("Username or email or password is null");
-        }
-
-        if (!user.email.endsWith(".com")) {
-            throw new EmailNotValidException("Email doesn't end with .com");
-        }
-
         return userRepository.save(user);
     }
 

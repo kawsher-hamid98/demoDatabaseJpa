@@ -2,6 +2,7 @@ package com.testcompany.demotapp1.controller;
 
 import com.testcompany.demotapp1.Service.UserService;
 import com.testcompany.demotapp1.model.User;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,8 +19,10 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    public User saveUser(@RequestBody User user) {
-       return userService.save(user);
+    public User saveUser(@Valid @RequestBody User user) {
+        log.info("user object: {}", user);
+
+        return userService.save(user);
     }
 
     @GetMapping("/find")
